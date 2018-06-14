@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         // Set Tabs inside Toolbar
-        //TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
-        //tabs.setupWithViewPager(viewPager);
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
         // Create Navigation drawer and inlfate layout
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         //adapter.addFragment(new ListContentFragment(), "List");
-        //adapter.addFragment(new TileContentFragment(), "Tile");
+        adapter.addFragment(new TileContentFragment(), "Tile");
         //adapter.addFragment(new CardContentFragment(), "Card");
         viewPager.setAdapter(adapter);
     }
